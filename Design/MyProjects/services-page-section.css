@@ -1,0 +1,217 @@
+/* BASIC-COLOR-VARIABLES! */
+/* ==================================================================================================== */
+
+:root {
+    --services-page-section-bg-color: #000d1e;
+    --services-page-section-heading-color: #fff;
+    --services-page-section-heading-span-color: #0ef;
+    /*--projects-box-bg-color: #001b2e;*/
+    /*--projects-box-bg-color: #323946;*/
+    /*--projects-box-bg-color: linear-gradient(135deg, #1e3a57, #2d475f, #3a5b6b, #2f3e4b);*/
+    --projects-box-bg-color: linear-gradient(135deg, #2a4870, #335e72, #3f6b7f, #364c59);
+    --projects-box-i-color: #001b2e;
+    --projects-box-i-hover-color: #0ef;
+    --projects-box-h3-color: #000d5f;
+    --projects-box-h3-hover-color: #0ef;
+    --projects-box-p-color: #323946;
+    --projects-box-p-hover-color: #999;
+    --projects-box-p-hover-bg-color: linear-gradient(135deg, #00040d, #00121b, #001b2e, #000d5f);
+    --projects-button-color: #2c5278;
+    --projects-button-bg-color: #0ef;
+    --projects-button-hover-color: #0ef;
+    --projects-button-hover-bg-color: #000d5f;
+    --projects-box-hover-color: #2c5278;
+}
+
+/* SERVICES-PAGE-SECTION! */
+/* ==================================================================================================== */
+
+.services-page-section {
+    background-color: var(--services-page-section-bg-color);
+}
+
+.services-page-section .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--services-page-section-heading-color);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.services-page-section span {
+    color: var(--services-page-section-heading-span-color);
+    text-decoration: underline;
+}
+
+/* PROJECTS-CONTAINER! */
+/* ==================================================================================================== */
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+/* PROJECTS-BOX! */
+/* ==================================================================================================== */
+
+.projects-box {
+    flex: 1 1 30rem;
+    background: var(--projects-box-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    height: 500px;
+    cursor: pointer;
+}
+
+.projects-box:hover {
+    border-color: var(--projects-box-hover-color);
+    transform: scale(1.05);
+}
+
+/* PROJECTS-BOX-IMAGE! */
+/* ==================================================================================================== */
+
+.projects-box i {
+    font-size: 7rem;
+    color: var(--projects-box-i-color);
+    height: 100px;
+    width: 100px;
+}
+
+.projects-box i:hover {
+    color: var(--projects-box-i-hover-color);
+}
+
+/* PROJECTS-BOX-H3! */
+/* ==================================================================================================== */
+
+.projects-box h3 {
+    font-size: 2rem;
+    color: var(--projects-box-h3-color);
+    letter-spacing: 3px;
+    height: 100px;
+    filter: drop-shadow(1px 1px 1px #0ef);
+    font-weight: bold;
+    margin: 0;
+}
+
+.projects-box h3:hover {
+    color: var(--projects-box-h3-hover-color);
+    filter: drop-shadow(2px 2px 2px #000d5f);
+}
+
+/* PROJECTS-BOX-P! */
+/* ==================================================================================================== */
+
+.projects-box p {
+    color: var(--projects-box-p-color);
+    font-size: 1.6rem;
+    margin: 0;
+    letter-spacing: 1.5px;
+    height: 150px;
+    margin-top: -40px;
+    font-weight: bold;
+}
+
+.projects-box p:hover {
+    color: var(--projects-box-p-hover-color);
+    background: var(--projects-box-p-hover-bg-color);
+    border: 3px solid black;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+/* PROJECTS-BOX-P! */
+/* ==================================================================================================== */
+
+.projects-box .projects-button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    color: var(--projects-button-color);
+    background: var(--projects-button-bg-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #2c5278;
+    font-size: 18px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin-top: 60px;
+}
+
+.projects-box .projects-button:hover {
+    color: var(--projects-button-hover-color);
+    background-color: var(--projects-button-hover-bg-color);
+}
+
+.projects_title {
+    height: 250px;
+}
+
+.projects_paragraph {
+    height: 100px;
+}
+
+.projects_read_more {
+    height: 100px;
+    margin-top: 20px;
+}
+
+/* MOBILE-PHONE-SCREENS-UP-TO-768-PIXELS! */
+/* ==================================================================================================== */
+
+@media (max-width: 768px) {
+    .services-page-section {
+        background-color: var(--services-page-section-bg-color);
+    }
+
+    .services-page-section .heading {
+        text-align: center;
+        font-size: 4.5rem;
+        color: var(--services-page-section-heading-color);
+        cursor: pointer;
+        margin-top: -35px;
+        margin-bottom: 20px;
+    }
+
+    .services-page-section span {
+        color: var(--services-page-section-heading-span-color);
+        text-decoration: underline;
+        padding-bottom: 3px;
+    }
+
+    .projects-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        width: 400px;
+    }
+
+    .projects-box {
+        flex: 1 1 30rem;
+        background: var(--projects-box-bg-color);
+        padding: 3rem 2rem 4rem;
+        border-radius: 2rem;
+        text-align: center;
+        border: .2rem solid var(--bg-color);
+        transition: .5s ease;
+        height: 500px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+}
+
+/* ==================================================================================================== */

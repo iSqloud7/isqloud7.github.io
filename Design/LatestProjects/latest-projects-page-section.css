@@ -1,0 +1,312 @@
+/* BASIC COLOR VARIABLES! */
+/* ==================================================================================================== */
+/* Defining CSS variables for colors and gradients used in the Latest Projects section */
+:root {
+    --latest-projects-page-section-bg-color: #001b2e;
+    --latest-projects-page-section-heading-color: #fff;
+    --latest-projects-page-section-span-color: #0ef;
+    --project-layer-title-h4-color: #000d5f;
+    --project-layer-title-h3-color: linear-gradient(135deg, #2c5278, #3b5a74, #4b6c80, #3c4a5b);
+    --project-layer-text-p-color: darkred;
+    --project-layer-icon-a-color: #0ef;
+    --project-layer-icon-a-bg-color: #000d5f;
+    --project-layer-icon-a-i-color: #0ef;
+    --project-layer-icon-a-i-bg-color: #000d5f;
+    --project-layer-icon-a-i-hover-color: #0ef;
+
+    --project-box-bg-color: linear-gradient(135deg, #00040d, #00121b, #001b2e, #000d5f);
+}
+
+/* LATEST-PROJECTS-PAGE-SECTION! */
+/* ==================================================================================================== */
+/* Container section for the Latest Projects page */
+.latest-projects-page-section {
+    background-color: var(--latest-projects-page-section-bg-color);
+}
+
+/* Heading styles inside the Latest Projects section */
+.latest-projects-page-section .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--latest-projects-page-section-heading-color);
+    margin-bottom: 40px;
+    cursor: pointer; /* Indicates the heading is clickable */
+}
+
+/* Styling for span inside the heading, usually highlights text */
+.latest-projects-page-section span {
+    color: var(--latest-projects-page-section-span-color);
+    text-decoration: underline;
+    padding-bottom: 3px;
+}
+
+/* LATEST-PROJECTS-CONTAINER! */
+/* ==================================================================================================== */
+/* Grid container for projects with three columns and gap between items */
+.latest-projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* LATEST-PROJECTS-BOX! */
+/* ==================================================================================================== */
+/* Individual project box styles */
+.latest_projects_box {
+    position: relative; /* for absolutely positioned child elements */
+    border: 10px double black;
+    border-radius: 3rem;
+    box-shadow: 0 0 0.5rem #0ef;
+    overflow: hidden;
+    display: flex;
+    cursor: pointer; /* clickable project box */
+    height: 200px;
+}
+
+/* LATEST-PROJECTS-IMAGE! */
+/* ==================================================================================================== */
+/* Project image styling */
+.latest_projects_box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+/* Zoom effect on project image hover */
+.latest_projects_box:hover img {
+    width: 100%;
+    transform: scale(1.1);
+}
+
+/* LATEST-PROJECTS-LAYER! */
+/* ==================================================================================================== */
+/* Overlay layer for project info, initially hidden by translateY(100%) */
+.project-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), #0ef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+    margin: 0;
+}
+
+/* Show overlay on hover */
+.latest_projects_box:hover .project-layer {
+    transform: translateY(0);
+}
+
+/* LATEST-PROJECTS-LAYER-TITLE! */
+/* ==================================================================================================== */
+/* Title container inside project overlay */
+.project-layer .project-title {
+    margin: 0;
+    height: 50%;
+}
+
+/* LATEST-PROJECTS-LAYER-TITLE-H4! */
+/* ==================================================================================================== */
+/* Main title styling in overlay */
+.project-layer .project-title h4 {
+    color: var(--project-layer-title-h4-color);
+    font-weight: bold;
+    text-shadow: 5px 5px 10px white;
+    font-size: 22px;
+    letter-spacing: -1.5px;
+    height: 60%;
+    margin: 0;
+}
+
+/* Adding subtle drop shadow effect */
+.project-layer .project-title h4 {
+    filter: drop-shadow(1px 1px 1px darkred);
+}
+
+/* LATEST-PROJECTS-LAYER-TITLE-H3! */
+/* ==================================================================================================== */
+/* Subtitle styling in overlay */
+.project-layer .project-title h3 {
+    color: var(--project-layer-title-h3-color);
+    font-size: 15px;
+    letter-spacing: 3px;
+    height: 40%;
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* Subtitle hover effect: color change and spacing increase */
+.project-layer .project-title h3:hover {
+    color: darkred;
+    letter-spacing: 5px;
+    filter: drop-shadow(1px 1px 1px #000d5f);
+}
+
+/* LATEST-PROJECTS-LAYER-TEXT! */
+/* ==================================================================================================== */
+/* Text container inside project overlay */
+.project-layer .project-text {
+    height: 20%;
+}
+
+/* Paragraph styling inside overlay text */
+.project-layer .project-text p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--project-layer-text-p-color);
+}
+
+/* LATEST-PROJECTS-LAYER-ICON! */
+/* ==================================================================================================== */
+/* Icon container inside project overlay */
+.project-layer .project-icon {
+    height: 25%;
+}
+
+/* Link styled as circular icon button */
+.project-layer .project-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 50%;
+    color: var(--project-layer-icon-a-color);
+    background-color: var(--project-layer-icon-a-bg-color);
+    margin-bottom: 30px;
+}
+
+/* LATEST-PROJECTS-LAYER-ICON-I! */
+/* ==================================================================================================== */
+/* Icon inside link */
+.project-layer .project-icon a i {
+    font-size: 2rem;
+    color: var(--project-layer-icon-a-i-color);
+    background-color: var(--project-layer-icon-a-i-bg-color);
+}
+
+/* Icon hover effect */
+.project-layer .project-icon a i:hover {
+    color: var(--project-layer-icon-a-i-hover-color);
+}
+
+/* Blurred background image styling */
+.project-image {
+    filter: blur(1.5px);
+    width: 1000px;
+}
+
+/* MOBILE-PHONE-SCREENS-UP-TO-768-PIXELS! */
+/* ==================================================================================================== */
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .latest-projects-page-section {
+        /*margin-top: 60px;*/
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .latest-projects-page-section .heading {
+        text-align: center;
+        font-size: 4.5rem;
+        color: var(--latest-projects-page-section-heading-color);
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+
+    .latest-projects-page-section span {
+        color: var(--latest-projects-page-section-span-color);
+        text-decoration: underline;
+        padding-bottom: 3px;
+    }
+
+    .latest-projects-container {
+        margin-top: 60px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .latest_projects_box {
+        position: relative;
+        border: 10px double black;
+        border-radius: 3rem;
+        box-shadow: 0 0 0.5rem #0ef;
+        overflow: hidden;
+        display: flex;
+        cursor: pointer;
+        height: 200px;
+    }
+
+    /* Overlay background changes to a gradient on mobile */
+    .project-layer {
+        background: linear-gradient(135deg, #00040d, #00121b, #001b2e, #000d5f);
+    }
+
+    /* Adjust project title container on mobile */
+    .project-layer .project-title {
+        height: 200px;
+        width: 25vw;
+        padding: 5px;
+        border: 3px solid #0ef;
+        border-radius: 20px;
+        margin-top: 15px;
+    }
+
+    /* Adjust title styling for mobile */
+    .project-layer .project-title h4 {
+        font-size: 12px;
+        text-shadow: none;
+        filter: none;
+        letter-spacing: 1.5px;
+        color: #000d5f;
+        background: linear-gradient(135deg, #2c5278, #3b5a74, #4b6c80, #3c4a5b);
+        height: 120px;
+    }
+
+    /* Hover effect on mobile for h4 */
+    .project-layer .project-title h4:hover {
+        filter: drop-shadow(1px 1px 1px black);
+        color: #000d5f;
+    }
+
+    /* Hide h3 on mobile */
+    .project-layer .project-title h3 {
+        display: none;
+    }
+
+    /* Hide text content on mobile */
+    .project-layer .project-text {
+        display: none;
+    }
+
+    /* Adjust icon container height */
+    .project-layer .project-icon {
+        height: 50px;
+    }
+
+    /* Adjust icon links size and margins on mobile */
+    .project-layer .project-icon a {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        height: 30px;
+        width: 30px;
+        border-width: 2px;
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    /* Icon i element font size on mobile */
+    .project-layer .project-icon a i {
+        font-size: 10px;
+    }
+}
+
+/* ==================================================================================================== */

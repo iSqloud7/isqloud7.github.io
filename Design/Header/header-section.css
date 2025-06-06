@@ -1,0 +1,260 @@
+/* BASIC-COLOR-VARIABLES! */
+/* ==================================================================================================== */
+
+/* Root CSS variables for header colors and gradients */
+:root {
+    --header-section-color: linear-gradient(135deg, #00040d, #00121b, #001b2e, #000d5f);
+    --header-logo-span-color: linear-gradient(135deg, #2c5278, #3b5a74, #4b6c80, #3c4a5b);
+    --header-navbar-color: #000d1e;
+    --header-navbar-a: #fff;
+    --header-navbar-a-hover: #4b6c80;
+    --header-navbar-a-after: #4b6c80;
+    --header-navbar-a-active: #2c5278;
+    --header-navbar-menu-icon-color: #2c5278;
+    --header-navbar-menu-icon-hover-color: #4b6c80;
+    --header-navbar-sound-button-color: #4b6c80;
+    --header-navbar-sound-button-hover-color: white;
+}
+
+/* HEADER-SECTION! */
+/* ==================================================================================================== */
+
+/* Fixed header bar with gradient background, shadow, padding, and smooth transitions */
+.header-section {
+    position: fixed; /* Fixed at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--header-section-color);
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    z-index: 100; /* On top of other elements */
+    padding: 1.5rem 3%;
+    box-shadow: 0 0.5rem 3rem #4b6c80; /* Shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+
+/* Sticky header style changes background and adds border */
+.header-section.sticky {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+}
+
+/* HEADER-LOGO-SPAN! */
+/* ==================================================================================================== */
+
+/* Logo container with bigger font and pointer cursor */
+.header-logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Gradient text effect on span inside logo */
+.header-logo span {
+    color: transparent; /* Text color hidden */
+    background: var(--header-logo-span-color);
+    -webkit-background-clip: text; /* Safari and Chrome */
+    background-clip: text; /* Standard */
+    letter-spacing: -1.5px; /* Tighten letter spacing */
+}
+
+/* HEADER-LOGO-IMG! */
+/* ==================================================================================================== */
+
+/* Logo image styling with margin, border, and transition */
+.header-logo img {
+    margin-right: 10px;
+    border: 2px solid steelblue;
+    transition: transform 0.5s ease;
+}
+
+/* On hover, rotate logo image 360deg and round corners */
+.header-logo:hover img {
+    transform: rotate(360deg);
+    border-radius: 25px;
+}
+
+/* HEADER-NAVBAR! */
+/* ==================================================================================================== */
+
+/* Navigation bar: hidden by default, positioned below header */
+.header-navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3%;
+    background: var(--header-navbar-color);
+    border-top: 0.1rem solid #4b6c80;
+    box-shadow: 0 0.5rem 3rem #4b6c80;
+    display: none; /* Hidden initially */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navbar active state: show flex column with padding */
+.header-navbar.active {
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3%;
+    height: auto;
+}
+
+/* LINKS-IN-NAVBAR! */
+/* ==================================================================================================== */
+
+/* Nav links styling: white, spaced, centered with transition */
+.header-navbar a {
+    color: var(--header-navbar-a);
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative; /* For underline pseudo */
+    letter-spacing: 3px;
+    word-spacing: 3px;
+}
+
+/* Link hover color */
+.header-navbar a:hover {
+    color: var(--header-navbar-a-hover);
+}
+
+/* Underline effect for nav links */
+.header-navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--header-navbar-a-after);
+    transition: width 0.3s;
+}
+
+/* Active nav link color */
+.header-navbar a.active {
+    color: var(--header-navbar-a-active);
+}
+
+/* LINES-BELOW-LINKS-IN-NAVBAR! */
+/* ==================================================================================================== */
+
+/* Underline expands on hover and active */
+.header-navbar a:hover::after,
+.header-navbar a.active::after {
+    width: 100%;
+}
+
+/* HEADER-NAVBAR-MENU-ICON! */
+/* ==================================================================================================== */
+
+/* Menu icon large size, color and pointer */
+#header-navbar-menu-icon {
+    font-size: 4rem;
+    color: var(--header-navbar-menu-icon-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Menu icon hover color change */
+#header-navbar-menu-icon:hover {
+    color: var(--header-navbar-menu-icon-hover-color);
+}
+
+/* TABLET-SCREENS-UP-TO-1024-PIXELS! */
+/* ==================================================================================================== */
+
+/* Adjust logo and navbar font sizes for tablet screens */
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    #menu-icon {
+        font-size: 3rem;
+    }
+}
+
+/* MOBILE-PHONE-SCREENS-UP-TO-768-PIXELS! */
+/* ==================================================================================================== */
+
+/* Further font and padding adjustments for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2%;
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
+        margin: 1.5rem 0;
+    }
+
+    #menu-icon {
+        font-size: 2.8rem;
+    }
+
+    .header {
+        padding: 1rem 2%;
+    }
+}
+
+/* МOBILE-PHONE-SCREENS-UP-TO-480-PIXELS! */
+/* ==================================================================================================== */
+
+/* Smallest font sizes and margins for smallest screens */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 1.4rem;
+        margin: 1rem 0;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    #menu-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* SOUND-BUTTON! */
+/* ==================================================================================================== */
+
+/* Sound toggle button styling with color and rounded corners */
+.nav-sound-btn {
+    background-color: var(--header-section-color);
+    color: var(--header-navbar-sound-button-color);
+    border-radius: 10px;
+    font-size: 15px;
+    margin-left: auto; /* Push to right */
+    padding-right: 30px;
+}
+
+/* Sound button hover color */
+.nav-sound-btn:hover {
+    color: var(--header-navbar-sound-button-hover-color);
+}
+
+/* Sound button responsive adjustments for smaller widths */
+@media (max-width: 748px) {
+    .nav-sound-btn {
+        padding: 0.4em;
+        width: 40px;
+        justify-content: center;
+    }
+    .nav-sound-btn .btn-text {
+        display: none; /* Hide text on small */
+    }
+}
+
+/* ==================================================================================================== */

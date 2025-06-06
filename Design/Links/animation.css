@@ -1,0 +1,102 @@
+.bg-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--links-page-section-heading-span-color);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: ripple-effect 0.6s ease-out forwards;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--links-page-section-heading-span-color);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1s ease-out forwards;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+.menu-item.glow {
+    animation: glow-pulse 1s ease-in-out;
+}
+
+/*@keyframes glow-pulse {*/
+/*    0%, 100% {*/
+/*        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);*/
+/*    }*/
+/*    50% {*/
+/*        box-shadow: 0 8px 25px rgba(14, 255, 255, 0.6), 0 0 30px rgba(14, 255, 255, 0.3);*/
+/*    }*/
+/*}*/
+
+.circle-menu::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    /*background: linear-gradient(45deg, var(--links-page-section-heading-span-color), transparent, var(--links-page-section-heading-span-color));*/
+    background: linear-gradient(90deg, black, transparent, #0ef);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

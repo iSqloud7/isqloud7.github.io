@@ -1,0 +1,387 @@
+@import url("animation.css");
+
+/* BASIC COLOR VARIABLES! */
+/* ==================================================================================================== */
+
+:root {
+    --links-page-section-bg-color: #001b2e;
+    --links-page-section-heading-color: #fff;
+    --links-page-section-heading-span-color: #0ef;
+    --links-page-section-bg-color-circle-menu: rgba(255, 255, 255, 0.1);
+    --links-page-section-center-icon-bg-color: #0ef;
+    --links-page-section-center-icon-i-color: #001b2e;
+    --links-page-section-center-icon-bg-color-hover: #0ef;
+    --links-page-section-center-icon-i-color-hover: #001b2e;
+}
+
+/* LINKS-PAGE-SECTION! */
+/* ==================================================================================================== */
+
+.links-page-section {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--links-page-section-bg-color);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.links-page-section .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--links-page-section-heading-color);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.links-page-section span {
+    color: var(--links-page-section-heading-span-color);
+    text-decoration: underline;
+}
+
+.circle-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* CIRCLE-MENU! */
+/* ==================================================================================================== */
+
+.circle-menu {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: var(--links-page-section-bg-color-circle-menu);
+    backdrop-filter: blur(20px);
+    border: 10px double #0ef;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s ease;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.circle-menu:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* CENTER-ICON! */
+/* ==================================================================================================== */
+
+.center-icon {
+    height: 110px;
+    width: 110px;
+    display: flex;
+    border: 10px double var(--links-page-section-center-icon-i-color);
+    border-radius: 50%;
+    background: var(--links-page-section-center-icon-bg-color);
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+
+.center-icon:hover {
+    transform: scale(1.2) rotate(360deg);
+    background-color: var(--links-page-section-center-icon-bg-color-hover);
+}
+
+.center-icon i {
+    font-size: 40px;
+    color: var(--links-page-section-center-icon-i-color);
+    transition: all 0.5s ease;
+}
+
+/* MENU-ITEM! */
+/* ==================================================================================================== */
+
+.menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.menu-item.show {
+    opacity: 1;
+    transform: translate(calc(100px * cos(var(--angle))), calc(100px * sin(var(--angle)))) scale(1);
+    pointer-events: auto;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.menu-item.github a {
+    color: white;
+    /*background-color: #181717;*/
+    /*border: 3px solid black;*/
+}
+
+.menu-item.gitlab a {
+    color: #FC6D26;
+    /*background-color: #181717;*/
+    /*border: 3px solid black;*/
+}
+
+.menu-item.linkedin a {
+    color: #0077B5;
+}
+
+.menu-item.instagram a {
+    color: #E1306C;
+}
+
+.menu-item.facebook a {
+    color: #1877F2;
+}
+
+.menu-item.discord a {
+    color: #5865F2;
+}
+
+.menu-item.twitter a {
+    color: #1DA1F2;
+}
+
+.menu-item.other a {
+    color: white;
+}
+
+.menu-item i {
+    font-size: 33px;
+    transition: all 0.9s ease;
+}
+
+.menu-item:hover i {
+    transform: rotate(360deg) scale(1.5);
+}
+
+/* MENU-ITEM-POSITIONING! */
+/* ==================================================================================================== */
+
+.circle-menu.active .menu-item {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.circle-menu.active .menu-item.github {
+    top: 10%;
+    left: 50%;
+}
+
+.circle-menu.active .menu-item.gitlab {
+    top: 25%;
+    left: 15%;
+}
+
+.circle-menu.active .menu-item.linkedin {
+    top: 50%;
+    left: 5%;
+}
+
+.circle-menu.active .menu-item.instagram {
+    top: 75%;
+    left: 15%;
+}
+
+.circle-menu.active .menu-item.facebook {
+    top: 90%;
+    left: 50%;
+}
+
+.circle-menu.active .menu-item.discord {
+    top: 75%;
+    left: 85%;
+}
+
+.circle-menu.active .menu-item.twitter {
+    top: 50%;
+    left: 95%;
+}
+
+.circle-menu.active .menu-item.other {
+    top: 25%;
+    left: 85%;
+}
+
+.circle-menu.rotating {
+    animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #0ef;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.7;
+    animation: particle-move 2s forwards ease-out;
+    --random-x: 0px;
+    --random-y: 0px;
+    transform: translate(var(--random-x), var(--random-y));
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--random-x), var(--random-y)) scale(0);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: ripple-effect 0.6s ease-out forwards;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes particle-move {
+    to {
+        opacity: 0;
+        transform: translate(calc(var(--random-x) * 2), calc(var(--random-y) * 2));
+    }
+}
+
+/* MEDIA QUERIES FOR MOBILE SCREENS! */
+/* ==================================================================================================== */
+
+@media (max-width: 768px) {
+    .circle-menu {
+        width: 384px;
+        height: 384px;
+    }
+
+    .menu-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .menu-item i {
+        font-size: 30px;
+    }
+
+    .center-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .center-icon i {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .links-page-section .heading {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .circle-menu {
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu-item {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-item i {
+        font-size: 20px;
+    }
+
+    .center-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .center-icon i {
+        font-size: 20px;
+    }
+
+    .menu-item.instagram,
+    .menu-item.twitter {
+        top: 10px;
+    }
+
+    .menu-item.instagram,
+    .menu-item.github {
+        left: 10px;
+    }
+
+    .menu-item.twitter,
+    .menu-item.discord {
+        right: 10px;
+    }
+
+    .menu-item.github,
+    .menu-item.discord {
+        bottom: 10px;
+    }
+}
+
+/* ==================================================================================================== */

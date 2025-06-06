@@ -1,0 +1,309 @@
+/* BASIC-COLOR-VARIABLES! */
+/* ==================================================================================================== */
+
+/* Define color variables for easy theming */
+:root {
+    --contacts-page-section-bg-color: #000d1e;
+    --contacts-page-section-heading-color: #fff;
+    --contacts-page-section-heading-span-color: #0ef;
+
+    --contacts-page-section-contact-form-bg-color: #001b2e;
+    --input-box-input-select-textarea-color: #fff;
+    --input-box-input-select-textarea-bg-color: #011627;
+    --input-box-button-color: #000d1e;
+    --input-box-button-bg-color: #0ef;
+    --input-box-button-hover-bg-color: #08c;
+}
+
+/* CONTACTS-PAGE-SECTION! */
+/* ==================================================================================================== */
+
+/* Main section background */
+.contacts-page-section {
+    background: var(--contacts-page-section-bg-color);
+}
+
+/* Heading style for the section */
+.contacts-page-section .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--contacts-page-section-heading-color);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+/* Span inside heading with underline and special color */
+.contacts-page-section span {
+    color: var(--contacts-page-section-heading-span-color);
+    text-decoration: underline;
+    padding-bottom: 3px;
+}
+
+/* CONTACT-FORM! */
+/* ==================================================================================================== */
+
+/* Centered form with max width, padding, rounded corners and subtle glowing shadow */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--contacts-page-section-contact-form-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+    margin-bottom: 50px;
+}
+
+/* INPUT-BOX! */
+/* ==================================================================================================== */
+
+/* Input container uses flex to arrange inputs on one line (row) */
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-direction: row;
+}
+
+/* Style all inputs, selects and textarea */
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: var(--input-box-input-select-textarea-color);
+    background: var(--input-box-input-select-textarea-bg-color);
+    border: 2px solid #0ef;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+/* Highlight border and add glow on focus */
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: #08c;
+    box-shadow: 0 0 20px #08c;
+}
+
+/* STYLES! */
+/* ==================================================================================================== */
+
+/* Duplicate focus styles (can be combined with above) */
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: #08c;
+    box-shadow: 0 0 20px #08c;
+}
+
+/* Autofill styles override background and text color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    background-color: var(--input-box-input-select-textarea-bg-color) !important;
+    -webkit-text-fill-color: var(--input-box-input-select-textarea-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Placeholder color style */
+::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    /*font-style: italic;*/
+    font-size: 1rem;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ON SAME LINE! */
+/* ==================================================================================================== */
+
+/* Inputs to be placed side by side with 48% width */
+.input-box input[name="from_name"],
+.input-box input[name="from_surname"] {
+    width: 48%;
+}
+
+.input-box input[name="phone"],
+.input-box input[name="email"] {
+    width: 48%;
+}
+
+#importance {
+    width: 48%;
+}
+
+#opt {
+    color: blue;
+}
+
+/* Subject and importance inputs also 48% width to align on same line */
+.input-box input[name="subject"],
+.input-box input[name="importance"] {
+    width: 48%;
+}
+
+/* INPUT-BOX-BUTTON! */
+/* ==================================================================================================== */
+
+/* Submit button full width with styling and hover effect */
+.input-box .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--input-box-button-color);
+    background: var(--input-box-button-bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-box .btn:hover {
+    background: linear-gradient(45deg, #0ef, #08c);
+    box-shadow: 0 0 15px var(--input-box-button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+/* DIALOG! */
+/* ==================================================================================================== */
+
+/* Modal dialog styling with fixed center position and fade-in animation */
+dialog {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border: 3px solid #0ef;
+    border-radius: 12px;
+    padding: 2.5em 3em;
+    max-width: 360px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0ef;
+    background: #001b2e;
+    text-align: center;
+    animation: fadeInScale 0.3s ease forwards;
+    height: 130px;
+}
+
+/* Dialog message text style */
+.dialog-message {
+    font-size: 1.2rem;
+    margin-bottom: 1.8em;
+    font-weight: 600;
+}
+
+/* Dialog button style */
+.dialog-btn {
+    padding: 0.5em 1.8em;
+    background-color: #0ef;
+    border: none;
+    border-radius: 6px;
+    color: #001b2e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 10px;
+}
+
+/* Hover effect for dialog button */
+.dialog-btn:hover {
+    background-color: #001b2e;
+    color: #00eeff;
+    border: 3px solid #00eeff;
+}
+
+/* Keyframes for fade in and scale animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Backdrop style for dialog overlay */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MOBILE-PHONE-SCREENS-UP-TO-768-PIXELS! */
+/* ==================================================================================================== */
+
+/* Responsive styles for screens smaller than or equal to 768px (mobile and tablets) */
+@media screen and (max-width: 768px) {
+
+    /* Smaller heading font size and reduced bottom margin for better fit */
+    .contacts-page-section .heading {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Stack input boxes vertically instead of side by side */
+    .input-box {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* All inputs, selects, and textarea take full width with vertical margin */
+    .input-box input,
+    .input-box select,
+    .input-box textarea {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Specific inputs forced to 100% width to stack nicely */
+    .input-box input[name="from_name"],
+    .input-box input[name="from_surname"],
+    .input-box input[name="phone"],
+    .input-box input[name="email"],
+    .input-box input[name="subject"],
+    .input-box input[name="importance"] {
+        width: 100%; /* Stack form fields */
+    }
+
+    /* Reduce form padding on smaller screens */
+    #contact-form {
+        padding: 20px;
+    }
+
+    /* Full width for importance select/input */
+    #importance {
+        width: 100%;
+    }
+
+    /* Slightly smaller button font size */
+    .input-box .btn {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==================================================================================================== */

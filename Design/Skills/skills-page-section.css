@@ -1,0 +1,861 @@
+@import url("../initial-design.css");
+
+/* BASIC-COLOR-VARIABLES! */
+/* ==================================================================================================== */
+
+:root {
+    --skills-page-section-bg-color: #000d1e;
+    --skills-page-section-heading-color: #fff;
+    --skills-page-section-heading-span-color: #0ef;
+
+    /*FULL-STACK TECHNOLOGIES HEAD*/
+    --skills-page-section-color-technologies-head-heading: #fff;
+    --skills-page-section-color-technologies-head-span: #0ef;
+    /*FULL-STACK TECHNOLOGIES BODY*/
+    --skills-page-section-bg-color-technologies-body: #000d1e;
+    --skills-page-section-color-technologies-body-border: #0ef;
+    /*FULL-STACK TECHNOLOGIES CONTAINER*/
+    --skills-page-section-bg-color-technologies: #011627;
+    --skills-page-section-bg-color-technologies-border: #0ef;
+    /*FULL-STACK TECHNOLOGIES h3*/
+    --skills-page-section-color-technologies-front-end-technologies-h3: #2c5278;
+    --skills-page-section-color-technologies-back-end-technologies-h3: #2c5278;
+    --skills-page-section-color-technologies-front-end-technologies-span: #0ef;
+    --skills-page-section-color-technologies-back-end-technologies-span: #0ef;
+    /*FULL-STACK TECHNOLOGIES h3*/
+    --skills-page-section-color-technologies-front-end-technologies-h4: #2c5278;
+    --skills-page-section-color-technologies-back-end-technologies-h4: #2c5278;
+
+
+    /*DATA TECHNOLOGIES & ANALYSIS HEAD*/
+    --skills-page-section-color-data-technologies-analysis-head-heading: #fff;
+    --skills-page-section-color-data-technologies-analysis-head-span: #0ef;
+    /*DATA TECHNOLOGIES & ANALYSIS BODY*/
+    --skills-page-section-bg-color-data-technologies-analysis-body: #000d1e;
+    --skills-page-section-color-data-technologies-analysis-body-border: #0ef;
+
+
+    /*PROGRAMMING LANGUAGES HEAD*/
+    --skills-page-section-color-programming-languages-head-heading: #fff;
+    --skills-page-section-color-programming-languages-head-span: #0ef;
+    /*PROGRAMMING LANGUAGES BODY*/
+    --skills-page-section-bg-color-programming-languages-body: #000d1e;
+    --skills-page-section-color-programming-languages-body-border: #0ef;
+    /*PROGRAMMING LANGUAGES CONTAINER*/
+    --skills-page-section-bg-color-programming-languages: #011627;
+    --skills-page-section-bg-color-programming-languages-border: #0ef;
+    /*PROGRAMMING LANGUAGES LANGUAGE*/
+    --skills-page-section-color-programming-languages-language: #2c5278;
+    --skills-page-section-color-programming-languages-language-hover: white;
+    --skills-page-section-color-programming-languages-front-end-languages: #2c5278;
+    --skills-page-section-color-programming-languages-back-end-languages: #2c5278;
+    --skills-page-section-color-programming-languages-front-end-languages-span: #0ef;
+    --skills-page-section-color-programming-languages-back-end-languages-span: #0ef;
+    /*PROGRAMMING LANGUAGES BUTTONS*/
+    --skills-page-section-color-programming-languages-buttons: #0ef;
+    --skills-page-section-bg-color-programming-languages-buttons: #000d1e;
+    --skills-page-section-bg-color-programming-languages-buttons-border: #0ef;
+    --skills-page-section-color-programming-languages-buttons-hover: #000d1e;
+    --skills-page-section-bg-color-programming-languages-buttons-hover: #0ef;
+}
+
+/* SKILLS-PAGE-SECTION! */
+/* ==================================================================================================== */
+
+.skills-page-section {
+    background: var(--skills-page-section-bg-color);
+}
+
+.skills-page-section .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    color: var(--skills-page-section-heading-color);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.skills-page-section span {
+    color: var(--skills-page-section-heading-span-color);
+    text-decoration: underline;
+    padding-bottom: 3px;
+}
+
+/* TECHNOLOGIES! */
+/* ==================================================================================================== */
+
+.technologies {
+    background-color: var(--skills-page-section-bg-color-technologies-body);
+    border-left: 5px solid var(--skills-page-section-color-technologies-body-border);
+    border-right: 5px solid var(--skills-page-section-color-technologies-body-border);
+    border-radius: 15px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    animation: slideUp 0.5s ease-out;
+    justify-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.technologies:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.3);
+}
+
+/* TECHNOLOGIES HEAD! */
+/* ==================================================================================================== */
+
+.technologies .heading {
+    color: var(--skills-page-section-color-technologies-head-heading);
+    cursor: pointer;
+    font-size: 2.8rem;
+    text-align: center;
+    padding-top: 35px;
+    margin-bottom: 40px;
+}
+
+/* TECHNOLOGIES CONTAINER! */
+/* ==================================================================================================== */
+
+.technologies .technologies-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 10px double #0ef;
+    height: 560px;
+}
+
+/* TECHNOLOGIES FRONT-END TECHNOLOGIES! */
+/* ==================================================================================================== */
+
+.technologies .front-end-technologies {
+    width: 50%;
+    justify-items: center;
+}
+
+/* TECHNOLOGIES BACK-END TECHNOLOGIES! */
+/* ==================================================================================================== */
+
+.technologies .back-end-technologies {
+    width: 50%;
+    justify-items: center;
+}
+
+/* TECHNOLOGIES FRONT-END TITLE! */
+/* ==================================================================================================== */
+
+.front-end-technologies .front-end {
+    color: var(--skills-page-section-color-technologies-front-end-technologies-h3);
+    font-size: 20px;
+}
+
+.front-end-technologies .front-end span {
+    color: var(--skills-page-section-color-technologies-front-end-technologies-span)
+}
+
+/* TECHNOLOGIES BACK-END TITLE! */
+/* ==================================================================================================== */
+
+.back-end-technologies .back-end {
+    color: var(--skills-page-section-color-technologies-front-end-technologies-h3);
+    font-size: 20px;
+}
+
+.back-end-technologies .back-end span {
+    color: var(--skills-page-section-color-technologies-front-end-technologies-span)
+}
+
+/* TECHNOLOGIES FRONT-END TECHNOLOGIES h4! */
+/* ==================================================================================================== */
+
+.front-end-technologies h4 {
+    color: var(--skills-page-section-color-technologies-front-end-technologies-h4);
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: -7px;
+}
+
+/* TECHNOLOGIES BACK-END TECHNOLOGIES h4! */
+/* ==================================================================================================== */
+
+.back-end-technologies h4 {
+    color: var(--skills-page-section-color-technologies-back-end-technologies-h4);
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: -7px;
+}
+
+/* TECHNOLOGIES FRONT-END TECHNOLOGIES ul! */
+/* ==================================================================================================== */
+
+.front-end-technologies ul {
+    display: flex;
+    text-align: center;
+}
+
+/* TECHNOLOGIES FRONT-END TECHNOLOGIES li! */
+/* ==================================================================================================== */
+
+.front-end-technologies li {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* TECHNOLOGIES BACK-END TECHNOLOGIES ul! */
+/* ==================================================================================================== */
+
+.back-end-technologies ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* TECHNOLOGIES BACK-END TECHNOLOGIES li! */
+/* ==================================================================================================== */
+
+.back-end-technologies li {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* TECHNOLOGIES FRONT-END TECHNOLOGIES BUTTON! */
+/* ==================================================================================================== */
+
+.front-end-technologies li .read-more-button {
+    background: #000d1e;
+    color: #0ef;
+    border: 1px solid #0ef;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+.front-end-technologies li .read-more-button:hover {
+    background: #0ef;
+    color: #000d1e;
+}
+
+/* TECHNOLOGIES BACK-END TECHNOLOGIES BUTTON! */
+/* ==================================================================================================== */
+
+.back-end-technologies li .read-more-button {
+    background: #000d1e;
+    color: #0ef;
+    border: 1px solid #0ef;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+.back-end-technologies li .read-more-button:hover {
+    background: #0ef;
+    color: #000d1e;
+}
+
+/* DATA TECHNOLOGIES & ANALYSIS! */
+/* ==================================================================================================== */
+
+.data-technologies-analysis {
+    background-color: var(--skills-page-section-bg-color-data-technologies-analysis-body);
+    border-left: 5px solid var(--skills-page-section-color-data-technologies-analysis-body-border);
+    border-right: 5px solid var(--skills-page-section-color-data-technologies-analysis-body-border);
+    border-radius: 15px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    animation: slideUp 0.5s ease-out;
+    justify-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.data-technologies-analysis:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.3);
+}
+
+/* DATA TECHNOLOGIES & ANALYSIS HEAD! */
+/* ==================================================================================================== */
+
+.data-technologies-analysis-head .heading {
+    color: var(--skills-page-section-color-data-technologies-analysis-head-heading);
+    cursor: pointer;
+    font-size: 2.8rem;
+    text-align: center;
+    padding-top: 35px;
+    margin-bottom: 40px;
+}
+
+.data-technologies-analysis-head span {
+    color: var(--skills-page-section-color-data-technologies-analysis-head-span);
+    text-decoration: underline;
+}
+
+/* DATA TECHNOLOGIES & ANALYSIS CONTAINER! */
+/* ==================================================================================================== */
+
+.technologies-container {
+    background-color: var(--skills-page-section-bg-color-technologies-body);
+    display: flex;
+    height: 300px;
+    width: 700px;
+    border: 2px solid var(--skills-page-section-bg-color-technologies-border);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* DATA TECHNOLOGIES & ANALYSIS CONTAINER! */
+/* ==================================================================================================== */
+
+.data-technologies-analysis-container {
+    background-color: var(--skills-page-section-bg-color-programming-languages-body);
+    display: flex;
+    height: 520px;
+    width: 1100px;
+    border: 2px solid var(--skills-page-section-color-programming-languages-body-border);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    background-color: #02213d;
+    color: #0ef;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.dropdown-toggle:hover {
+    background-color: #03314f;
+}
+
+.dropdown-toggle .arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 16px;
+    font-size: 2rem;
+}
+
+.dropdown.active .dropdown-content {
+    max-height: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dropdown-content li {
+    list-style-type: disc;
+    color: #cfd8dc;
+    font-size: 1.2rem;
+    margin: 6px 0;
+    padding-left: 20px;
+}
+
+
+/* PROGRAMMING LANGUAGES! */
+/* ==================================================================================================== */
+
+.programming-languages {
+    background-color: var(--skills-page-section-bg-color-programming-languages);
+    border-left: 5px solid var(--skills-page-section-bg-color-programming-languages-border);
+    border-right: 5px solid var(--skills-page-section-bg-color-programming-languages-border);
+    border-radius: 15px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    animation: slideUp 0.5s ease-out;
+    justify-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.programming-languages:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(0, 188, 212, 0.3);
+}
+
+/* PROGRAMMING LANGUAGES HEAD! */
+/* ==================================================================================================== */
+
+.programming-languages-head .heading {
+    color: var(--skills-page-section-color-programming-languages-head-heading);
+    cursor: pointer;
+    font-size: 2.8rem;
+    text-align: center;
+    padding-top: 35px;
+    margin-bottom: 40px;
+}
+
+.programming-languages-head span {
+    color: var(--skills-page-section-color-programming-languages-head-span);
+    text-decoration: underline;
+}
+
+/* PROGRAMMING LANGUAGES BODY! */
+/* ==================================================================================================== */
+
+.programming-languages-body {
+    background-color: var(--skills-page-section-bg-color-programming-languages-body);
+    display: flex;
+    height: 200px;
+    width: 1100px;
+    border: 2px solid var(--skills-page-section-color-programming-languages-body-border);
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+/* PROGRAMMING LANGUAGES BODY! */
+/* ==================================================================================================== */
+
+.programming-languages-body .front-end-development-container {
+    width: 50%;
+    justify-items: center;
+    padding-top: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.programming-languages-body .back-end-development-container {
+    width: 50%;
+    justify-items: center;
+    padding-top: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* PROGRAMMING LANGUAGES BODY FRONT-END DEVELOPMENT! */
+/* ==================================================================================================== */
+
+.front-end-development {
+
+}
+
+/* PROGRAMMING LANGUAGES BODY BACK-END DEVELOPMENT! */
+/* ==================================================================================================== */
+
+.back-end-development {
+
+}
+
+/* PROGRAMMING LANGUAGES BODY FRONT-END DEVELOPMENT LANGUAGES! */
+/* ==================================================================================================== */
+
+.front-end-development .languages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.front-end-development .languages li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 25px;
+    border: 3px solid #4b6c80;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+/* PROGRAMMING LANGUAGES BODY BACK-END DEVELOPMENT LANGUAGES! */
+/* ==================================================================================================== */
+
+.back-end-development .languages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-end-development .languages li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 25px;
+    border: 3px double #4b6c80;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+/* PROGRAMMING LANGUAGES LANGUAGE! */
+/* ==================================================================================================== */
+
+.programming-languages .languages .language {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 10px;
+    color: var(--skills-page-section-color-programming-languages-language);
+}
+
+.programming-languages .languages .language:hover {
+    color: var(--skills-page-section-color-programming-languages-language-hover)
+}
+
+.programming-languages .front-end-development h3 {
+    color: var(--skills-page-section-color-programming-languages-front-end-languages);
+}
+
+.programming-languages .back-end-development h3 {
+    color: var(--skills-page-section-color-programming-languages-front-end-languages);
+}
+
+.programming-languages .front-end-languages {
+    color: var(--skills-page-section-color-programming-languages-front-end-languages-span);
+}
+
+.programming-languages .back-end-languages {
+    color: var(--skills-page-section-color-programming-languages-back-end-languages-span);
+}
+
+/* PROGRAMMING LANGUAGES BUTTONS READ MORE! */
+/* ==================================================================================================== */
+
+.programming-languages .read-more-button {
+    color: var(--skills-page-section-color-programming-languages-buttons);
+    background-color: var(--skills-page-section-bg-color-programming-languages-buttons);
+    border: 1px solid var(--skills-page-section-bg-color-programming-languages-buttons-border);
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 10px;
+    width: 80px;
+}
+
+.programming-languages .read-more-button:hover {
+    color: var(--skills-page-section-color-programming-languages-buttons-hover);
+    background-color: var(--skills-page-section-bg-color-programming-languages-buttons-hover);
+}
+
+/* PROGRAMMING LANGUAGES DIALOG! */
+/* ==================================================================================================== */
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    font-family: Arial, sans-serif;
+}
+
+#close-dialog {
+    margin-top: 15px;
+    background: #000d1e;
+    color: #0ef;
+    border: 1px solid #0ef;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#close-dialog:hover {
+    background: #0ef;
+    color: #000d1e;
+}
+
+#language-dialog {
+    height: 300px;
+    width: 300px;
+}
+
+#dialog-title {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#dialog-title:hover {
+    color: white;
+}
+
+#dialog-description {
+    font-size: 15px;
+    color: #2c5278;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* TECHNOLOGIES DIALOG! */
+/* ==================================================================================================== */
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    font-family: Arial, sans-serif;
+}
+
+#technologies-close-dialog {
+    margin-top: 15px;
+    background: #000d1e;
+    color: #0ef;
+    border: 1px solid #0ef;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#technologies-close-dialog:hover {
+    background: #0ef;
+    color: #000d1e;
+}
+
+#technologies-dialog {
+    height: 300px;
+    width: 300px;
+}
+
+#technologies-dialog-title {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#technologies-dialog-title:hover {
+    color: white;
+}
+
+#technologies-dialog-description {
+    font-size: 15px;
+    color: #2c5278;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* ==================================================================================================== */
+
+/* MEDIA QUERIES FOR SCREENS UP TO 748px */
+/* ==================================================================================================== */
+
+/* TECHNOLOGIES SECTION */
+@media (max-width: 748px) {
+    /* Container adjustments */
+    .technologies .technologies-container {
+        padding-left: 15px;
+        padding-right: 15px;
+        height: auto;
+        display: block;
+        width: 300px;
+    }
+
+    /* Front-end and back-end technologies containers */
+    .technologies .front-end-technologies,
+    .technologies .back-end-technologies {
+        width: 100%;
+        margin-bottom: 25px;
+        justify-items: center;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    /* Technologies section heading */
+    .technologies .heading {
+        font-size: 2rem;
+        padding-top: 20px;
+        margin-bottom: 25px;
+        word-break: break-word;
+    }
+
+    /* Front-end and back-end tech titles */
+    .front-end-technologies .front-end,
+    .back-end-technologies .back-end {
+        font-size: 18px;
+    }
+
+    .front-end-technologies h4,
+    .back-end-technologies h4 {
+        font-size: 11px;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    /* Front-end tech list - flex wrap */
+    .front-end-technologies ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    /* Back-end tech list - vertical column */
+    .back-end-technologies ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        padding-left: 0;
+    }
+
+    /* List items styling */
+    .front-end-technologies li,
+    .back-end-technologies li {
+        width: 95px;
+        min-height: auto;
+        margin: 5px 8px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    /* Read more buttons inside list items */
+    .front-end-technologies li .read-more-button,
+    .back-end-technologies li .read-more-button {
+        font-size: 11px;
+        padding: 3px 5px;
+        margin: 5px auto 0;
+        display: block;
+        max-width: 90%;
+    }
+}
+
+/* DATA TECHNOLOGIES ANALYSIS SECTION */
+@media (max-width: 748px) {
+    .data-technologies-analysis {
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        border-left-width: 3px;
+        border-right-width: 3px;
+        border-radius: 12px;
+    }
+
+    .data-technologies-analysis-head .heading {
+        font-size: 2rem;
+        padding-top: 20px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .data-technologies-analysis-head span {
+        font-size: 2rem;
+    }
+
+    .data-technologies-analysis-container {
+        width: 100%;
+        max-width: 720px;
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 25px;
+        border-radius: 12px;
+        border-width: 1.5px;
+    }
+
+    /* Individual tech blocks */
+    .data-storage,
+    .microsoft-365,
+    .data-preprocessing-analysis,
+    .web-scraping-nlp,
+    .cloud-dev-ops-technologies {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Dropdown toggle and content */
+    .dropdown-toggle {
+        font-size: 1rem;
+        padding: 10px 14px;
+        border-radius: 6px;
+    }
+
+    .dropdown-content {
+        font-size: 1rem;
+        padding-left: 16px;
+    }
+
+    .dropdown-content li {
+        font-size: 1rem;
+        margin: 4px 0;
+    }
+
+    .dropdown-toggle .arrow {
+        font-size: 1.2rem;
+    }
+
+    /* Dropdown open state */
+    .dropdown.active .dropdown-content {
+        max-height: 220px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+/* PROGRAMMING LANGUAGES SECTION */
+@media (max-width: 748px) {
+    .programming-languages-body {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    /* Front-end and back-end development containers */
+    .programming-languages-body .front-end-development-container,
+    .programming-languages-body .back-end-development-container {
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Front-end and back-end language lists */
+    .front-end-development .languages,
+    .back-end-development .languages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Language list items */
+    .front-end-development .languages li,
+    .back-end-development .languages li {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Section heading */
+    .programming-languages-head .heading {
+        font-size: 2rem;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Read more button styling */
+    .programming-languages .read-more-button {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    /* Language dialog box */
+    #language-dialog {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+    }
+}
+
