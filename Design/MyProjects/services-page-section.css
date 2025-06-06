@@ -189,28 +189,15 @@
         text-decoration: underline;
         padding-bottom: 3px;
     }
-
     .projects-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 3rem;
-        width: 400px;
+        width: 100%; /* ✅ флексибилна ширина */
+        padding: 0 10px; /* ✅ простор без overflow */
     }
 
     .projects-box {
-        flex: 1 1 30rem;
-        background: var(--projects-box-bg-color);
-        padding: 3rem 2rem 4rem;
-        border-radius: 2rem;
-        text-align: center;
-        border: .2rem solid var(--bg-color);
-        transition: .5s ease;
-        height: 500px;
-        cursor: pointer;
-        margin-top: 20px;
-        margin-left: 60px;
+        margin-left: 0; /* ✅ отстрани рачна маргина што турка надесно */
+        width: 100%; /* ✅ дозволи флексибилна ширина */
+        max-width: 100%; /* ✅ не дозволува поголема од viewport */
     }
 }
 
