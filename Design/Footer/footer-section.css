@@ -1,7 +1,6 @@
 /* BASIC-COLOR-VARIABLES! */
 /* ==================================================================================================== */
 
-/* Color variables for footer section styling */
 :root {
     --footer-section-color: linear-gradient(135deg, #2c5278, #3b5a74, #4b6c80, #3c4a5b);
     --footer-section-text-p-hover-color: darkred;
@@ -15,38 +14,47 @@
 /* FOOTER-PAGE-SECTION! */
 /* ==================================================================================================== */
 
-/* Footer container: flexbox layout, wrapped, spaced, and padded */
 .footer-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Wrap icons/text on small screens */
-    background: linear-gradient(135deg, #2c5278, #3b5a74, #4b6c80, #3c4a5b); /* Gradient background */
-    padding: 2rem 3%; /* Top-bottom and side padding */
+    flex-wrap: wrap;
+    background: var(--footer-section-color);
+    padding: 2rem 3%;
+    width: 100%;
+    gap: 1rem; /* Prevent elements from touching on smaller screens */
+}
+
+.footer-text {
+    flex: 1 1 auto;
+    min-width: 200px; /* Prevents overflow on very narrow screens */
+}
+
+.footer-iconTop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex: 0 0 auto;
 }
 
 /* FOOTER-TEXT-P! */
 /* ==================================================================================================== */
 
-/* Paragraph text in footer with spacing, pointer cursor and white color with subtle shadow */
 .footer-text p {
     font-size: 1.6rem;
-    word-spacing: 10px; /* Extra space between words */
-    cursor: pointer; /* Pointer cursor on hover */
+    word-spacing: 10px;
+    cursor: pointer;
     color: white;
-    filter: drop-shadow(2px 2px 2px black); /* Adds subtle shadow around text */
+    filter: drop-shadow(2px 2px 2px black);
+    margin: 0;
 }
 
-/* Bold text inside paragraph - hover changes color and shadow */
 .footer-text p b:hover {
     color: black;
     filter: drop-shadow(2px 2px 2px white);
-    /* Uncomment below to add border and rounded corners */
-    /*border: 2px solid white;*/
-    /*border-radius: 10px;*/
 }
 
-/* Bold text default size */
 .footer-text b {
     font-size: 1.8rem;
 }
@@ -54,7 +62,6 @@
 /* FOOTER-ICON-A! */
 /* ==================================================================================================== */
 
-/* Footer icon links styled as square blocks with center-aligned icons */
 .footer-iconTop a {
     display: inline-flex;
     justify-content: center;
@@ -65,20 +72,17 @@
     transition: 0.5s ease;
 }
 
-/* Hover effect: glow and background color change */
 .footer-iconTop a:hover {
     box-shadow: 0 0 1rem var(--footer-section-icon-a-hover-color);
     color: var(--footer-section-icon-a-hover-color);
     background: var(--footer-section-icon-a-hover-bg-color);
 }
 
-/* Icon inside the link: font size and color */
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--footer-section-icon-a-i-color);
 }
 
-/* Icon hover changes color */
 .footer-iconTop a i:hover {
     color: white;
 }
@@ -86,31 +90,36 @@
 /* МOBILE-PHONE-SCREENS-UP-TO-768-PIXELS! */
 /* ==================================================================================================== */
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    /* Reduce word spacing and font size for footer paragraph text */
+    .footer-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text, .footer-iconTop {
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
     .footer-text p {
         word-spacing: 5px;
         font-size: 1.1rem;
     }
 
-    /* Slightly smaller bold text */
     .footer-text b {
         font-size: 1.6rem;
     }
 
-    /* Make footer icons smaller and square */
     .footer-iconTop a {
         height: 30px;
         width: 30px;
-        padding: 0; /* Remove padding to fit the smaller size */
+        padding: 0;
         border-radius: 0.6rem;
     }
 
-    /* Adjust icon size inside smaller buttons */
     .footer-iconTop a i {
         font-size: 1.6rem;
     }
 }
-
-/* ==================================================================================================== */
