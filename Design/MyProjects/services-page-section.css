@@ -127,7 +127,7 @@
     padding: 3px;
 }
 
-/* PROJECTS-BOX-P! */
+/* PROJECTS-BOX-BUTTON! */
 /* ==================================================================================================== */
 
 .projects-box .projects-button {
@@ -144,7 +144,10 @@
     transition: .5s ease;
     margin-bottom: 10px;
     text-align: center;
-    width: 200px;
+
+    /* Responsive width */
+    width: auto; /* flexible width */
+    min-width: 150px;
     height: 50px;
     margin-top: 60px;
 }
@@ -189,16 +192,25 @@
         text-decoration: underline;
         padding-bottom: 3px;
     }
+
     .projects-container {
-        width: 100%; /* ✅ флексибилна ширина */
-        padding: 0 10px; /* ✅ простор без overflow */
+        width: 100%; /* ✅ flexible width */
+        padding: 0 10px; /* ✅ padding without overflow */
     }
 
     .projects-box {
-        margin-left: 0; /* ✅ отстрани рачна маргина што турка надесно */
-        width: 100%; /* ✅ дозволи флексибилна ширина */
-        max-width: 100%; /* ✅ не дозволува поголема од viewport */
+        margin-left: 0; /* ✅ remove manual left margin */
+        width: 100%; /* ✅ flexible width */
+        max-width: 100%; /* ✅ no overflow */
+    }
+
+    /* Make button full width on small screens */
+    .projects-box .projects-button {
+        width: 100%;
+        padding: 1rem 1rem;
+        font-size: 16px;
+        margin-top: 30px;
+        min-width: unset;
+        box-sizing: border-box;
     }
 }
-
-/* ==================================================================================================== */
